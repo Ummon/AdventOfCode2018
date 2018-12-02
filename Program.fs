@@ -7,9 +7,14 @@ let day01 () =
     let changes = File.ReadAllText "Data/day01.input" |> Day01.parseInput
     sprintf "part1 = %A, part2 = %A" (Day01.finalFrequency changes) (Day01.firstDuplicate changes)
 
+let day02 () =
+    //let input = File.ReadAllText "Data/day02.input" |> Day01.parseInput
+    "day02"
+
 let days : (unit -> string) array =
     [|
         day01
+        day02
     |]
 
 let doDay (n : int) =
