@@ -4,8 +4,8 @@ open System
 open System.IO
 
 let day01 () =
-    let input = File.ReadAllText "Data/day01.input" |> Day01.parseInput
-    input
+    let changes = File.ReadAllText "Data/day01.input" |> Day01.parseInput
+    sprintf "part1 = %A, part2 = %A" (Day01.finalFrequency changes) (Day01.firstDuplicate changes)
 
 let days : (unit -> string) array =
     [|
