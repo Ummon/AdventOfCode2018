@@ -3,7 +3,7 @@ module AdventOfCode2018.Day02
 open System
 
 let parseInput (str : string) : string[] =
-    str.Split ([| "\r\n"; "\r"; "\n"; ","; " " |], StringSplitOptions.RemoveEmptyEntries)
+    str.Split ([| '\r'; '\n'; ','; ' ' |], StringSplitOptions.RemoveEmptyEntries)
 
 let containsN (n : int) (id : string) : bool =    
     id |> Seq.map (fun c -> id |> Seq.filter ((=) c) |> Seq.length) |> Seq.contains n

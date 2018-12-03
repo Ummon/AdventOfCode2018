@@ -12,10 +12,16 @@ let day02 () =
     let idLength = ids.[0].Length
     sprintf "part1 = %A, part2 = %A" (Day02.checksum ids) (Day02.findTwoStingsWithCommonChars ids (idLength - 1))
 
+let day03 () =
+    let claims = File.ReadAllText "Data/day03.input" |> Day03.parseInput
+    let surface, claimId = Day03.overlappingSurface claims
+    sprintf "part1 = %A, part2 = %A"  surface claimId
+
 let days : (unit -> string) array =
     [|
         day01
         day02
+        day03
     |]
 
 let doDay (n : int) =

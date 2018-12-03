@@ -3,7 +3,7 @@ module AdventOfCode2018.Day01
 open System
 
 let parseInput (str : string) : int[] =
-    str.Split ([| "\r\n"; "\r"; "\n"; "," |], StringSplitOptions.RemoveEmptyEntries) |> Array.map int
+    str.Split ([| '\r'; '\n'; ','; ' ' |], StringSplitOptions.RemoveEmptyEntries) |> Array.map int
 
 let finalFrequency : seq<int> -> int =
     Seq.sum
