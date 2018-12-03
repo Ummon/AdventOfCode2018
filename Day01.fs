@@ -3,7 +3,7 @@ module AdventOfCode2018.Day01
 open System
 
 let parseInput (str : string) : int[] =
-    str.Split ([| "\r\n"; "\r"; "\n" |], StringSplitOptions.RemoveEmptyEntries) |> Array.map int
+    str.Split ([| "\r\n"; "\r"; "\n"; "," |], StringSplitOptions.RemoveEmptyEntries) |> Array.map int
 
 let finalFrequency : seq<int> -> int =
     Seq.sum
@@ -18,5 +18,5 @@ let firstDuplicate (changes : seq<int>) : int =
             else
                 (false, sum', Set.add sum' frequencies)
 
-    ) (false, 0, Set.empty) repeatedChanges
+    ) (false, 0, Set.ofList [ 0 ]) repeatedChanges
     |> Seq.pick (fun (duplicate, sum, _) -> if duplicate then Some sum else None)

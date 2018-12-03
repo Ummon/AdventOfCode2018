@@ -8,8 +8,9 @@ let day01 () =
     sprintf "part1 = %A, part2 = %A" (Day01.finalFrequency changes) (Day01.firstDuplicate changes)
 
 let day02 () =
-    //let input = File.ReadAllText "Data/day02.input" |> Day01.parseInput
-    "day02"
+    let ids = File.ReadAllText "Data/day02.input" |> Day02.parseInput
+    let idLength = ids.[0].Length
+    sprintf "part1 = %A, part2 = %A" (Day02.checksum ids) (Day02.findTwoStingsWithCommonChars ids (idLength - 1))
 
 let days : (unit -> string) array =
     [|
