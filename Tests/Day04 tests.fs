@@ -33,7 +33,7 @@ type ``Day04 tests`` (output : ITestOutputHelper) =
                 [1518-11-05 00:55] wakes up
             """
 
-        output.WriteLine (Day04.parseInput input)
+        output.WriteLine (Day04.getSleepestGuard input |> string)
 
         1 =! 2
         ()

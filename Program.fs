@@ -15,11 +15,11 @@ let day02 () =
 let day03 () =
     let claims = File.ReadAllText "Data/day03.input" |> Day03.parseInput
     let surface, claimId = Day03.overlappingSurface claims
-    sprintf "part1 = %A, part2 = %A"  surface claimId
+    sprintf "part1 = %A, part2 = %A" surface claimId
 
 let day04 () =
-    // sprintf "part1 = %A, part2 = %A"  surface claimId
-    ""
+    let sleepestGuardId, sleepestTime = File.ReadAllText "Data/day04.input" |> Day04.getSleepestGuard
+    sprintf "part1 = %A, part2 = " (sleepestGuardId * sleepestTime)
 
 let days : Map<int, unit -> string> =
     [
