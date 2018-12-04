@@ -17,11 +17,16 @@ let day03 () =
     let surface, claimId = Day03.overlappingSurface claims
     sprintf "part1 = %A, part2 = %A"  surface claimId
 
+let day04 () =
+    // sprintf "part1 = %A, part2 = %A"  surface claimId
+    ""
+
 let days : Map<int, unit -> string> =
     [
         1, day01
         2, day02
         3, day03
+        4, day04
     ] |> Map.ofList
 
 let doDay (n : int) =
@@ -48,6 +53,4 @@ let main argv =
     else
         for day in days do
             doDay day.Key
-
-    Console.Read () |> ignore
     0
