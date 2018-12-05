@@ -2,20 +2,19 @@ module AdventOfCode2018.Day05
 
 open System
 
-let diffMajMin = int 'A' - int 'a'
+let diffMajMin = int 'a' - int 'A'
 
-let reduce (polymer : string) : string =
-    Seq.foldBack (
+let reduce (polymer : char list) : char list =
+    List.foldBack (
         fun a result ->
             match result with
             | b :: rest when int a - int b |> abs = diffMajMin -> rest
             | _ -> a :: result
     ) polymer [ ]
-    |> Array.ofList
-    |> String.Concat
 
-let findShortestPolymer (polymer : string) : string =
-    polymer.ToLower()
-    |> Seq.distinct
-    |> Seq.map (fun unit -> polymer.Replace(string unit, "", StringComparison.InvariantCultureIgnoreCase) |> reduce)
-    |> Seq.minBy String.length
+let findShortestPolymer (polymer : char list) : char list =
+    polymer
+    |> List.map Char.ToLower
+    |> List.distinct
+    |> List.map (fun unit -> polymer |> List.filter (fun c -> Char.ToLower c <> unit) |> reduce)
+    |> List.minBy List.length

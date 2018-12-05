@@ -12,11 +12,11 @@ type ``Day05 tests`` (output : ITestOutputHelper) =
 
     [<Fact>]
     let ``(Part1) From web page`` () =
-        let input = "dabAcCaCBAcCcaDA"
-        Day05.reduce input =! "dabCBAcaDA"
+        let input = List.ofSeq "dabAcCaCBAcCcaDA"
+        Day05.reduce input =! List.ofSeq "dabCBAcaDA"
 
     [<Fact>]
     let ``(Part2) From web page`` () =
-        let input = "dabAcCaCBAcCcaDA"
-        Day05.findShortestPolymer input =! "daDA"
+        let input = List.ofSeq "dabAcCaCBAcCcaDA"
+        Day05.findShortestPolymer input =! List.ofSeq "daDA"
 
