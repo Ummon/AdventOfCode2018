@@ -22,8 +22,8 @@ let day04 () =
     sprintf "part1 = %A, part2 = %A" (sleepestGuardId * sleepestTime) (sleepestGuardIdSameTime * sleepestTimeSameTime)
 
 let day05 () =
-    let foo = File.ReadAllText "Data/day05.input" |> Day05.parseInput
-    sprintf "part1 = , part2 = "
+    let reduced = (File.ReadAllText "Data/day05.input").Trim () |> Day05.reduce
+    sprintf "part1 = %A, part2 = %A" reduced.Length (Day05.findShortestPolymer reduced).Length
 
 let days : Map<int, unit -> string> =
     [
