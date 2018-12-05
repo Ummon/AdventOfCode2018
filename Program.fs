@@ -18,8 +18,12 @@ let day03 () =
     sprintf "part1 = %A, part2 = %A" surface claimId
 
 let day04 () =
-    let sleepestGuardId, sleepestTime = File.ReadAllText "Data/day04.input" |> Day04.getSleepestGuard
-    sprintf "part1 = %A, part2 = " (sleepestGuardId * sleepestTime)
+    let (sleepestGuardId, sleepestTime), (sleepestGuardIdSameTime, sleepestTimeSameTime) = File.ReadAllText "Data/day04.input" |> Day04.getSleepestGuard
+    sprintf "part1 = %A, part2 = %A" (sleepestGuardId * sleepestTime) (sleepestGuardIdSameTime * sleepestTimeSameTime)
+
+let day05 () =
+    let foo = File.ReadAllText "Data/day05.input" |> Day05.parseInput
+    sprintf "part1 = , part2 = "
 
 let days : Map<int, unit -> string> =
     [
@@ -27,6 +31,7 @@ let days : Map<int, unit -> string> =
         2, day02
         3, day03
         4, day04
+        5, day05
     ] |> Map.ofList
 
 let doDay (n : int) =
