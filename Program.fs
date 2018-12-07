@@ -29,6 +29,10 @@ let day06 () =
     let coords = File.ReadAllText "Data/day06.input" |> Day06.parseInput
     sprintf "part1 = %A, part2 = %A" (Day06.getLargestArea coords) (Day06.getAreaWithTotalDistanceLessThan 10000 coords)
 
+let day07 () =
+    let constraints = File.ReadAllText "Data/day07.input" |> Day07.parseInput
+    sprintf "part1 = %A, part2 =" (Day07.order constraints |> String.Concat)
+
 let days : Map<int, unit -> string> =
     [
         1, day01
@@ -37,6 +41,7 @@ let days : Map<int, unit -> string> =
         4, day04
         5, day05
         6, day06
+        7, day07
     ] |> Map.ofList
 
 let doDay (n : int) =
