@@ -4,12 +4,16 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Day06.fs" />
     <Compile Include="Day05.fs" />
     <Compile Include="Day04.fs" />
     <Compile Include="Day03.fs" />
     <Compile Include="Day02.fs" />
     <Compile Include="Day01.fs" />
     <Compile Include="Program.fs" />
+    <Content Include="Data/day06.input">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data/day05.input">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

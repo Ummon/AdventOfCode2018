@@ -25,6 +25,10 @@ let day05 () =
     let reduced = (File.ReadAllText "Data/day05.input").Trim () |> List.ofSeq |> Day05.reduce
     sprintf "part1 = %A, part2 = %A" reduced.Length (Day05.findShortestPolymer reduced).Length
 
+let day06 () =
+    let coords = File.ReadAllText "Data/day06.input" |> Day06.parseInput
+    sprintf "part1 = %A, part2 = %A" (Day06.getLargestArea coords) (Day06.getAreaWithTotalDistanceLessThan 10000 coords)
+
 let days : Map<int, unit -> string> =
     [
         1, day01
@@ -32,6 +36,7 @@ let days : Map<int, unit -> string> =
         3, day03
         4, day04
         5, day05
+        6, day06
     ] |> Map.ofList
 
 let doDay (n : int) =
